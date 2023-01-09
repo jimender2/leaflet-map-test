@@ -99,7 +99,7 @@ function App() {
           renderer={L.canvas()}
           updateWhenIdle={true}
           updateWhenZooming={false}
-          smoothFactor={3}
+          smoothFactor={30}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
