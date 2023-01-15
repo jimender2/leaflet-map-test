@@ -4,12 +4,15 @@ import { render } from 'react-dom';
 // import { MapContainer } from 'react-leaflet/MapContainer'
 // import { TileLayer } from 'react-leaflet/TileLayer'
 // import { useMap } from 'react-leaflet/hooks'
-import { Marker, Popup, MapContainer, TileLayer, useMap, Circle, CircleMarker, Polyline, Polygon, Rectangle } from 'react-leaflet';
+import { Marker, Popup, MapContainer, TileLayer, LayerGroup, useMap, Circle, CircleMarker, Polyline, Polygon, Rectangle } from 'react-leaflet';
 
 import "leaflet/dist/leaflet.css";
 
 import { useState, useEffect, useInsertionEffect } from "react";
-import L from "leaflet";
+import L, { geoJSON } from "leaflet";
+import ReactWebglLeaflet from 'react-webgl-leaflet'
+import glify from 'leaflet.glify';
+
 
 
 
@@ -95,11 +98,11 @@ function App() {
           center={[51.505, -0.09]}
           zoom={13}
           style={{ width: "1000px", height: "650px" }}
-          preferCanvas={true}
-          renderer={L.canvas()}
-          updateWhenIdle={true}
-          updateWhenZooming={false}
-          smoothFactor={30}
+        // preferCanvas={true}
+        // renderer={L.canvas()}
+        // updateWhenIdle={true}
+        // updateWhenZooming={false}
+        // smoothFactor={30}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -110,7 +113,12 @@ function App() {
               A pretty CSS3 popup. <br /> Easily customizable.
             </Popup>
           </Marker>
-          <Polygon pathOptions={purpleOptions} positions={multiPolygon} />
+          {/* <Polygon pathOptions={purpleOptions} positions={multiPolygon} /> */}
+          <LayerGroup>
+            <>
+
+            </>
+          </LayerGroup>
 
         </MapContainer>
       </header>

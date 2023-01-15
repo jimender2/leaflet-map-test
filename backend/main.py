@@ -7,7 +7,7 @@ app = FastAPI()
 @app.get("/hello")
 async def root():
     data = []
-    for i in range(10000):
+    for i in range(2500):
         tempdata = []
         for j in range(random.randint(0, 20)):
             tempdata.append([random.uniform(-90, 90),random.uniform(-90,90)])
